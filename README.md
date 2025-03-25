@@ -28,7 +28,7 @@ Installation:-
 
 Setup:-
     Clone the repository:
-    git clone https://github.com/your-username/orb-clicker.git
+    git clone https://github.com/kalviumcommunity/S65_Akshit_Capstone_Orbclicker
     cd orb-clicker
 
 Install dependencies for the backend:-
