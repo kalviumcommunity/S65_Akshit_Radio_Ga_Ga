@@ -21,6 +21,6 @@ const scoreSchema = new mongoose.Schema({
 
 
 },{timestamps:true})
-const Score = mongoose.Model('Score',scoreSchema)
+const Score = mongoose.model('Score',scoreSchema)
 
 export default Score

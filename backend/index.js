@@ -12,5 +12,5 @@ connectDb().then(
         console.log(`everything working fine :) and the server is runing at port at ${port}`)
     })
 ).catch((error)=>
-    console.error(`not working :(`)
+    console.error(`not working :( ${error}`)
 )
