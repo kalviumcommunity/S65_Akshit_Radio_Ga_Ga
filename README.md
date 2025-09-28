@@ -47,8 +47,8 @@ MongoDB (optional for backend persistence)
 Setup
 Clone the repository:
 
-git clone https://github.com/your-username/forgotten-tech-museum.git
-cd forgotten-tech-museum
+git clone https://github.com/kalviumcommunity/S65_Akshit_Radio_Ga_Ga.git
+
 
 Install frontend dependencies:
 
