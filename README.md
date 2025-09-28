@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Forgotten Tech Museum
 
-## Getting Started
+Forgotten Tech Museum is a web-based interactive 3D experience where users can explore old and forgotten technologies and machines in a virtual museum environment. Built with Next.js and powered by Three.js for immersive 3D visuals.
 
-First, run the development server:
+Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+First-Person Navigation – Walk around the museum with WASD controls.
+
+3D Exhibits – Explore artifacts represented as 3D models, with placeholders initially.
+
+Interactive Info Overlays – Click or hover over exhibits to view details.
+
+Polished Lighting & Environment – Realistic lighting, shadows, and subtle postprocessing effects.
+
+Optimized Performance – Smooth experience across modern browsers.
+
+Tech Stack
+
+Frontend
+
+Next.js (React-based framework)
+
+Three.js (3D rendering)
+
+@react-three/fiber (React wrapper for Three.js)
+
+@react-three/drei (helpers and utilities)
+
+Tailwind CSS (styling)
+
+Backend (Optional for future persistence)
+
+Node.js with Express.js
+
+MongoDB (for storing user sessions or visited exhibits)
+
+REST API with CRUD operations
+
+Installation
+
+Prerequisites
+
+Node.js (v16+ recommended)
+
+MongoDB (optional for backend persistence)
+
+Setup
+Clone the repository:
+
+git clone https://github.com/kalviumcommunity/S65_Akshit_Radio_Ga_Ga.git
+
+
+Install frontend dependencies:
+
+bun install
+
+Start the development server:
+
 bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+For backend setup (if using MongoDB persistence):
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+cd backend
+bun install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Set up environment variables in a .env file:
 
-## Learn More
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
 
-To learn more about Next.js, take a look at the following resources:
+Start the backend server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+bun run dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Future Enhancements
 
-## Deploy on Vercel
+Detailed 3D Models – Replace placeholders with realistic GLTF/GLB assets.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Animations & Rotations – Bring exhibits to life with subtle movement.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+User Progress Tracking – Track visited exhibits or favorite artifacts.
+
+Interactive Museum Features – Audio guides, guided tours, or VR support.
+
+License
+
+© 2025 Akshit Sharma. All rights reserved.  
+This software may not be copied, modified, distributed, or used without explicit permission.
+
+Contributors
+
+Akshit Sharma
+
+Feedback & Issues
+
+Feel free to open an issue or contribute via pull requests.
