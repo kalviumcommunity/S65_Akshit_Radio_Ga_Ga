@@ -1,64 +1,36 @@
-# S65_Akshit_Capstone_Orbclicker
-Orb Clicker
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Orb Clicker is a web-based incremental game where players click on an orb to earn points, upgrade their abilities, and compete on a global leaderboard. Built with the MERN stack and powered by Three.js for an immersive 3D experience.
+## Getting Started
 
-Features:-
-    Click-based Incremental Gameplay - Click the orb to earn points and unlock upgrades.
-    3D Visuals with Three.js - Interactive, visually appealing game environment.
-    Backend Score Management - Store and retrieve high scores using CRUD operations.
-    Leaderboard System - Compete with others by climbing the global leaderboard.
-    Upgrade System - Enhance clicking power with various in-game upgrades.
+First, run the development server:
 
-Tech Stack:-
-    Frontend
-    React.js (with Vite for fast development)
-    Three.js (for 3D rendering)
-    Tailwind CSS (for styling)
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-Backend:-
-    Node.js with Express.js
-    MongoDB (with Mongoose for database management)
-    REST API with CRUD operations
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Installation:-
-    Prerequisites
-    Node.js (v16+ recommended)
-    MongoDB (local or cloud-based, e.g., MongoDB Atlas)
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Setup:-
-    Clone the repository:
-    git clone https://github.com/kalviumcommunity/S65_Akshit_Capstone_Orbclicker
-    cd orb-clicker
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Install dependencies for the backend:-
-    cd backend
-    npm install
+## Learn More
 
-Set up environment variables in a .env file:
-    MONGO_URI=your_mongodb_connection_string
-    PORT=5000
+To learn more about Next.js, take a look at the following resources:
 
-Start the backend server:
-    npm run dev
-    Install dependencies for the frontend:
-    cd ../frontend
-    npm install
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Start the frontend development server:
-    npm run dev
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Deploy on Vercel
 
-Future Enhancements;-
-    Prestige System - Reset progress for exponential rewards.
-    Multiplayer Mode - Introduce real-time competition.
-    More Upgrades - Expand the upgrade tree for better engagement.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-License:-
-    MIT License
-
-Contributors:-
-    Akshit Sharma
-
-Feedback & Issues:-
-    Feel free to open an issue or contribute via pull requests!
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
