@@ -1,40 +1,56 @@
 import * as three from "three";
 
 const blockGeometry = new three.BoxGeometry(1, 1, 1);
-const blockMaterial = new three.MeshPhysicalMaterial({
-  metalness: 0,
-  roughness: 1,
+const blockMaterial = new three.MeshStandardMaterial({
   color: 0xffffff,
+  roughness: 0.8,
+  metalness: 0.2,
 });
-// const blockMaterial = new three.MeshBasicMaterial({
-//   color: 0xffffff,
-// });
+
+interface WorldSize {
+  renderDistance: number; // Distance in blocks from center (128 means 256x256 total area)
+}
+
 class World extends three.Group {
-  size;
-  constructor(size = { length: 16, width: 16, height: 128 }) {
+  size: WorldSize;
+
+  constructor(size: WorldSize = { renderDistance: 128 }) {
     super();
     this.size = size;
   }
+
   generate() {
-    const maxCount = this.size.length * this.size.width * this.size.height;
-    const mesh = new three.InstancedMesh(
+    // Create a massive plane using instanced cubes
+    // Total area: (2 * renderDistance) x (2 * renderDistance) blocks
+    const totalBlocks = (this.size.renderDistance * 2) ** 2;
+
+    const instancedMesh = new three.InstancedMesh(
       blockGeometry,
       blockMaterial,
-      maxCount
+      totalBlocks
     );
-    const matrix = new three.Matrix4();
-    mesh.count = 0;
-    for (let x = 0; x < this.size.length; x++) {
-      for (let y = 0; y < this.size.height; y++) {
-        for (let z = 0; z < this.size.width; z++) {
-          matrix.setPosition(1.5 * x + 0.5, 0 - (1.5 * y + 0.5), 1.5 * z + 0.5);
-          mesh.setMatrixAt(mesh.count++, matrix);
-        }
+
+    const matrix = new three.Matrix4();345
+    let instanceIndex = 0;
+    999;
+    // Generate a flat plane of blocks
+    for (let x = -this.size.renderDistance; x < this.size.renderDistance; x++) {
+      for (
+        let z = -this.size.renderDistance;
+        z < this.size.renderDistance;
+        z++
+      ) {
+        // Position blocks at y = -0.5 so the top surface is at y = 0
+        matrix.setPosition(x, -0.5, z);
+        instancedMesh.setMatrixAt(instanceIndex++, matrix);
       }
     }
-    mesh.castShadow = true;
-    mesh.receiveShadow = true;
-    this.add(mesh);
+
+    instancedMesh.castShadow = true;
+    instancedMesh.receiveShadow = true;
+    instancedMesh.count = instanceIndex;
+
+    this.add(instancedMesh);
   }
 }
 
