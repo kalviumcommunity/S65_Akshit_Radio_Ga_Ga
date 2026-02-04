@@ -2,12 +2,14 @@
 
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import ChatPanel from "./ChatPanel";
 
 export default function Hud() {
   const { data: session, status, update } = useSession();
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [name, setName] = useState(session?.user?.name ?? "");
   const [isSaving, setIsSaving] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
   const isAuthed = status === "authenticated";
 
   useEffect(() => {
@@ -27,6 +29,8 @@ export default function Hud() {
 
   return (
     <>
+      <ChatPanel open={chatOpen} onClose={() => setChatOpen(false)} />
+
       <div className="absolute top-4 right-4 z-10 flex items-center gap-2">
         {isAuthed ? (
           <>
@@ -78,10 +82,13 @@ export default function Hud() {
         </div>
       ) : null}
 
-      <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2 rounded-full bg-white/80 px-3 py-2 text-xs font-semibold text-black">
+      <button
+        className="absolute bottom-4 right-4 z-10 flex items-center gap-2 rounded-full bg-white/80 px-3 py-2 text-xs font-semibold text-black hover:bg-white"
+        onClick={() => setChatOpen((prev) => !prev)}
+      >
         <span className="h-2 w-2 rounded-full bg-black" />
         RGG
-      </div>
+      </button>
     </>
   );
 }
